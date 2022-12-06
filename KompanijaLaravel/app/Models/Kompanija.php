@@ -10,6 +10,14 @@ class Kompanija extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'naziv',
+        'adresa',
+        'email',
+        'website',
+        'direktor'
+    ];
+
     public function zaposleni(){
         return $this->hasMany(Zaposleni::class);
     }

@@ -11,6 +11,17 @@ class Zaposleni extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ime',
+        'prezime',
+        'pozicija',
+        'pol',
+        'email',
+        'kontakt',
+        'kompanija_id',
+        'grad_id'
+    ];
+
     public function kompanija(){
         return $this->belongsTo(Kompanija::class);
     }

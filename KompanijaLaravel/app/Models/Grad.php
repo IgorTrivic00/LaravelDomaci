@@ -10,6 +10,13 @@ class Grad extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'naziv',
+        'postanski_broj',
+        'drzava'
+    ];
+
+
     public function zaposleni(){
         return $this->hasMany(Zaposleni::class);
     }
