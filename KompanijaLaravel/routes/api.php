@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\KompanijaController;
 use App\Http\Controllers\API\GradController;
-
+use App\Http\Controllers\API\ZaposleniController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('kompanija',KompanijaController::class);
 Route::resource('grad', GradController::class);
+Route::resource('zaposleni', ZaposleniController::class);

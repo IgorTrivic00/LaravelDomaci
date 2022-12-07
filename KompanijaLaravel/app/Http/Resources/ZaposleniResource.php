@@ -22,8 +22,8 @@ class ZaposleniResource extends JsonResource
             'pol' => $this->resource->pol,
             'email' => $this->resource->email,
             'kontakt' => $this->resource->kontakt,
-            'kompanija_id' => new KompanijaResource($this->resource->kompanija_id),
-            'grad_id' => new GradResource($this->resource->grad_id)
+            'kompanija' => new KompanijaResource($this->resource->kompanija),
+            'grad' => new GradResource($this->resource->grad)
         ];
 
     }
