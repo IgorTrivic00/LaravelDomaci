@@ -24,7 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
-
-Route::resource('kompanija',KompanijaController::class);
-Route::resource('grad', GradController::class);
-Route::resource('zaposleni', ZaposleniController::class);
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::resource('kompanija',KompanijaController::class);
+    Route::resource('grad', GradController::class);
+    Route::resource('zaposleni', ZaposleniController::class);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
