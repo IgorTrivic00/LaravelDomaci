@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\KompanijaController;
 use App\Http\Controllers\API\GradController;
 use App\Http\Controllers\API\ZaposleniController;
+use App\Http\Controllers\API\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +20,10 @@ use App\Http\Controllers\API\ZaposleniController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::resource('kompanija',KompanijaController::class);
 Route::resource('grad', GradController::class);
